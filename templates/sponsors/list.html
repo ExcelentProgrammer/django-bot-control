@@ -1,0 +1,79 @@
+{% extends "layouts/main.html" %}
+
+{% block content %}
+
+    <div class="row justify-content-center">
+        <div class="col-lg-12">
+            <div class="white_card card_height_100 mb_30">
+                <div class="white_card_header">
+                    <div class="box_header m-0">
+                        <div class="d-flex justify-content-between w-100">
+                            <h3 class="m-0">Homiylar</h3>
+                            <a href="{% url "sponsors:create" %}" class="btn btn-primary">Qo'shish</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="white_card_body">
+                    <div class="QA_section">
+
+                        <div class="QA_table mb_30">
+
+                            <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper no-footer">
+                                <table class="table dataTable no-footer dtr-inline"
+                                       id="DataTables_Table_0" role="grid" aria-describedby="DataTables_Table_0_info"
+                                       style="width: 1061px;">
+                                    <thead>
+                                    <tr role="row">
+                                        <th scope="col" class="sorting_asc" tabindex="0"
+                                            aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
+                                            style="width: 121px;" aria-sort="ascending"
+                                            aria-label="title: activate to sort column descending">Image
+                                        </th>
+                                        <th scope="col" class="sorting" tabindex="0" aria-controls="DataTables_Table_0"
+                                            rowspan="1" colspan="1" style="width: 147px;"
+                                            aria-label="Category: activate to sort column ascending">Title
+                                        </th>
+                                        <th scope="col" class="sorting" tabindex="0" aria-controls="DataTables_Table_0"
+                                            rowspan="1" colspan="1" style="width: 152px;"
+                                            aria-label="Teacher: activate to sort column ascending">Link
+                                        </th>
+                                        <th scope="col" class="sorting" tabindex="0" aria-controls="DataTables_Table_0"
+                                            rowspan="1" colspan="1" style="width: 152px;"
+                                            aria-label="Teacher: activate to sort column ascending">#
+                                        </th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for sponsor in sponsors_list %}
+                                        <tr role="row" class="odd">
+                                            <th scope="row" tabindex="0" class="sorting_1"><img
+                                                    src="{{ sponsor.pic.url }}"
+                                                    alt="rasim topilmadi" style="width: 50px">
+                                            </th>
+                                            <td>{{ sponsor.name }}</td>
+                                            <td>{{ sponsor.link }}</td>
+                                            <td>
+                                                <a href="{% url "sponsors:delete" pk=sponsor.id %}"
+                                                   class="btn btn-danger btn-sm text-white">
+                                                    <i class="fas fa-trash"></i>
+                                                </a>
+{#                                                <a href="{% url "sponsors:edit" pk=sponsor.id %}"#}
+{#                                                   class="btn btn-primary btn-sm">#}
+{#                                                    <i class="fas fa-edit text-white"></i>#}
+{#                                                </a>#}
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12">
+        </div>
+    </div>
+{% endblock content %}

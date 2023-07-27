@@ -1,0 +1,28 @@
+{% extends "layouts/main.html" %}
+{% load crispy_forms_filters %}
+
+{% block content %}
+    <div class="white_card card_height_100 mb_30">
+        <div class="white_card_header">
+            <div class="box_header m-0">
+                <div class="main-title">
+                    <h3 class="m-0">Homiy o'chirish</h3>
+                </div>
+            </div>
+        </div>
+        <div class="white_card_body">
+            <div class="row d-flex justify-content-center">
+                <div>
+                    <form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
+                        <h4>Title: {{ object.name }}</h4>
+                        <h4>Link: {{ object.link }}</h4>
+                        <div class="footer mt-5 d-flex justify-content-end">
+                            <a href="{% url "sponsors:list" %}" class="btn btn-success me-5">Yo'q</a>
+                            <button class="btn btn-danger">ha</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

@@ -1,0 +1,107 @@
+{% load static %}
+{% load utils %}
+<!DOCTYPE html>
+<html lang="zxx">
+
+<!-- Mirrored from demo.dashboardpack.com/marketing-html/index_2.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 22 Jul 2023 13:54:33 GMT -->
+<head>
+
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <title>Marketing</title>
+    <link rel="icon" href="{% static "img/logo.png" %}" type="image/png">
+    <link rel="stylesheet" href="{% static "css/bootstrap1.min.css" %}"/>
+    <link rel="stylesheet" href="{% static "vendors/themefy_icon/themify-icons.css" %}"/>
+    <link rel="stylesheet" href="{% static "vendors/niceselect/css/nice-select.css" %}"/>
+    <link rel="stylesheet" href="{% static "vendors/owl_carousel/css/owl.carousel.css" %}"/>
+    <link rel="stylesheet" href="{% static "vendors/gijgo/gijgo.min.css" %}"/>
+    <link rel="stylesheet" href="{% static "vendors/font_awesome/css/all.min.css" %}"/>
+    <link rel="stylesheet" href="{% static "vendors/tagsinput/tagsinput.css" %}"/>
+    <link rel="stylesheet" href="{% static "vendors/datepicker/date-picker.css" %}"/>
+    <link rel="stylesheet" href="{% static "vendors/scroll/scrollable.css" %}"/>
+    <link rel="stylesheet" href="{% static "vendors/datatable/css/jquery.dataTables.min.css" %}"/>
+    <link rel="stylesheet" href="{% static "vendors/datatable/css/responsive.dataTables.min.css" %}"/>
+    <link rel="stylesheet" href="{% static "vendors/datatable/css/buttons.dataTables.min.css" %}"/>
+    <link rel="stylesheet" href="{% static "vendors/text_editor/summernote-bs4.css" %}"/>
+    <link rel="stylesheet" href="{% static "vendors/morris/morris.cs" %}s">
+    <link rel="stylesheet" href="{% static "vendors/material_icon/material-icons.css" %}"/>
+    <link rel="stylesheet" href="{% static "css/metisMenu.cs" %}s">
+    <link rel="stylesheet" href="{% static "css/style1.css" %}"/>
+    <link rel="stylesheet" href="{% static "css/colors/default.css" %}" id="colorSkinCS">
+</head>
+<body class="crm_body_bg">
+
+
+{% include "components/sidebar.html" %}
+
+
+<section class="main_content dashboard_part default_content">
+
+    <div class="container-fluid g-0">
+        <div class="row">
+            <div class="col-lg-12 p-0 ">
+                <div class="header_iner d-flex justify-content-between align-items-center">
+                    <div class="sidebar_icon d-lg-none">
+                        <i class="ti-menu" style="color: black"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main_content_iner">
+
+        <div class="container-fluid p-0">
+            {% for message in messages %}
+                <div class="alert text-white bg-{% if message.tags == 'error' %}danger{% else %}{{ message.tags }}{% endif %} d-flex align-items-center justify-content-between"
+                     role="alert">
+                    <div class="alert-text">{{ message }}</div>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {% endfor %}
+            {% block content %}
+            {% endblock content %}
+        </div>
+    </div>
+
+    {% include "components/footer.html" %}
+</section>
+
+<script src="{% static "js/jquery1-3.4.1.min.js" %}"></script>
+<script src="{% static "js/popper1.min.js" %}"></script>
+<script src="{% static "js/bootstrap1.min.js" %}"></script>
+<script src="{% static "js/metisMenu.js" %}"></script>
+<script src="{% static "vendors/count_up/jquery.waypoints.min.js" %}"></script>
+<script src="{% static "vendors/chartlist/Chart.min.js" %}"></script>
+<script src="{% static "vendors/count_up/jquery.counterup.min.js" %}"></script>
+<script src="{% static "vendors/niceselect/js/jquery.nice-select.min.js" %}"></script>
+<script src="{% static "vendors/owl_carousel/js/owl.carousel.min.js" %}"></script>
+<script src="{% static "vendors/datatable/js/jquery.dataTables.min.js" %}"></script>
+<script src="{% static "vendors/datatable/js/dataTables.responsive.min.js" %}"></script>
+<script src="{% static "vendors/datatable/js/dataTables.buttons.min.js" %}"></script>
+<script src="{% static "vendors/datatable/js/buttons.flash.min.js" %}"></script>
+<script src="{% static "vendors/datatable/js/jszip.min.js" %}"></script>
+<script src="{% static "vendors/datatable/js/pdfmake.min.js" %}"></script>
+<script src="{% static "vendors/datatable/js/vfs_fonts.js" %}"></script>
+<script src="{% static "vendors/datatable/js/buttons.html5.min.js" %}"></script>
+<script src="{% static "vendors/datatable/js/buttons.print.min.js" %}"></script>
+<script src="{% static "js/chart.min.js" %}"></script>
+<script src="{% static "vendors/progressbar/jquery.barfiller.js" %}"></script>
+<script src="{% static "vendors/tagsinput/tagsinput.js" %}"></script>
+<script src="{% static "vendors/text_editor/summernote-bs4.js" %}"></script>
+<script src="{% static "vendors/am_chart/amcharts.js" %}"></script>
+<script src="{% static "vendors/apex_chart/apexcharts.js" %}"></script>
+<script src="{% static "vendors/apex_chart/apex_dashboard.js" %}"></script>
+<script src="{% static "vendors/scroll/perfect-scrollbar.min.js" %}"></script>
+<script src="{% static "vendors/scroll/scrollable-custom.js" %}"></script>
+<script src="{% static "vendors/chart_am/core.js" %}"></script>
+<script src="{% static "vendors/chart_am/charts.js" %}"></script>
+<script src="{% static "vendors/chart_am/animated.js" %}"></script>
+<script src="{% static "vendors/chart_am/kelly.js" %}"></script>
+<script src="{% static "vendors/chart_am/chart-custom.js" %}"></script>
+
+<script src="{% static "js/custom.js" %}"></script>
+</body>
+
+<!-- Mirrored from demo.dashboardpack.com/marketing-html/index_2.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 22 Jul 2023 13:54:34 GMT -->
+</html>

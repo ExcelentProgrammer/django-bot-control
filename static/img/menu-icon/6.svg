@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16.54" height="8.656" viewBox="0 0 16.54 8.656">
+  <g id="motion" transform="translate(0 -122.025)">
+    <g id="Group_2195" data-name="Group 2195" transform="translate(0 122.025)">
+      <g id="Group_2194" data-name="Group 2194" transform="translate(0 0)">
+        <path id="Path_786" data-name="Path 786" d="M45.292,236.65a5.65,5.65,0,0,1,.037-.646H39.992V237.3h5.337A5.658,5.658,0,0,1,45.292,236.65Z" transform="translate(-38.7 -232.322)" fill="#8890b5"/>
+        <path id="Path_787" data-name="Path 787" d="M86.032,122.025H79.985v1.292h4.9A5.665,5.665,0,0,1,86.032,122.025Z" transform="translate(-77.401 -122.025)" fill="#8890b5"/>
+        <path id="Path_788" data-name="Path 788" d="M248.378,122.025a4.328,4.328,0,1,0,4.328,4.328A4.333,4.333,0,0,0,248.378,122.025Zm0,7.364h0a3.036,3.036,0,1,1,3.036-3.036A3.039,3.039,0,0,1,248.378,129.389Z" transform="translate(-236.166 -122.025)" fill="#8890b5"/>
+        <path id="Path_789" data-name="Path 789" d="M7.485,349.982H0v1.292H8.631A5.665,5.665,0,0,1,7.485,349.982Z" transform="translate(0 -342.618)" fill="#8890b5"/>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,35 @@
+{% load static %}
+<nav class="sidebar vertical-scroll  ps-container ps-theme-default ps-active-y">
+    <div class="logo d-flex justify-content-between">
+        <a href="{% url "adm:home" %}"><img src="{% static "img/logo-2.png" %}" alt></a>
+        <div class="sidebar_close_icon d-lg-none">
+            <i class="ti-close"></i>
+        </div>
+    </div>
+    <ul id="sidebar_menu">
+        <li class="mm-active">
+            <a class="" href="{% url "adm:home" %}" aria-expanded="false">
+                <div class="icon_menu">
+                    <img src="{% static "img/menu-icon/dashboard.svg" %}" alt>
+                </div>
+                <span>Bosh sahifa</span>
+            </a>
+        </li>
+        <li class="mm-active">
+            <a class="" href="{% url "sponsors:list" %}" aria-expanded="false">
+                <div class="icon_menu">
+                    <img src="{% static "img/menu-icon/dashboard.svg" %}" alt>
+                </div>
+                <span>Homiylar</span>
+            </a>
+        </li>
+        <li class="mm-active">
+            <a class="" href="{% url "adm:send-message" %}" aria-expanded="false">
+                <div class="icon_menu">
+                    <img src="{% static "img/menu-icon/dashboard.svg" %}" alt>
+                </div>
+                <span>Xabar yuborish</span>
+            </a>
+        </li>
+    </ul>
+</nav>

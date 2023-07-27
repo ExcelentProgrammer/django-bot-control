@@ -1,0 +1,110 @@
+{% extends "layouts/main.html" %}
+{% load utils %}
+{% block content %}
+    <style>
+        .box-shadow {
+            box-shadow: 0px 10px 22px 11px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="single_element">
+                <div class="quick_activity">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="row gap-3 justify-content-center">
+                                <div class="single_quick_activity col-12 col-sm-5 col-xl-5">
+                                    <div class="count_content">
+                                        <p>Foydalanuvchilar</p>
+                                        <h3><span class="counter">{{ users }}</span></h3>
+                                    </div>
+                                    <a href="#" class="notification_btn">Jami</a>
+                                    <div id="bar1" class="barfiller">
+                                        <div class="tipWrap">
+                                            <span class="tip"></span>
+                                        </div>
+                                        <span class="fill" data-percentage="100"></span>
+                                    </div>
+                                </div>
+                                <div class="single_quick_activity col-12 col-sm-5 col-xl-5">
+                                    <div class="count_content">
+                                        <p>Homiylar</p>
+                                        <h3><span class="counter">{{ sponsors }}</span></h3>
+                                    </div>
+                                    <a href="#" class="notification_btn violate_btn">Jami</a>
+                                    <div id="bar4" class="barfiller">
+                                        <div class="tipWrap">
+                                            <span class="tip"></span>
+                                        </div>
+                                        <span class="fill" data-percentage="100"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 mt-4 mb-3">
+                            <h1>Tasklar</h1>
+                            {% for task in tasks|slice:"5" %}
+                                <div class="quick_activity_wrap bg-white box-shadow p-4 rounded-3">
+                                    <div style="height: 100px" class="single_quick_activity bg-warning">
+                                        <div class="count_content">
+                                            <p class="text-white">Jami</p>
+                                            <h3><span class="counter text-white"
+                                                      id="total-{{ task.id }}">{{ task.total }}</span></h3>
+                                        </div>
+                                    </div>
+                                    <div style="height: 100px" class="single_quick_activity bg-primary">
+                                        <div class="count_content">
+                                            <p class="text-white">Yuborildi</p>
+                                            <h3><span class="counter text-white"
+                                                      id="done-{{ task.id }}">{{ task.done }}</span></h3>
+                                        </div>
+                                    </div>
+                                    <div style="height: 100px" class="single_quick_activity bg-danger">
+                                        <div class="count_content">
+                                            <p class="text-white">Xatolik</p>
+                                            <h3><span class="counter text-white"
+                                                      id="error-{{ task.id }}">{{ task.error }}</span></h3>
+                                        </div>
+                                    </div>
+                                    <div style="height: 100px" class="single_quick_activity bg-success">
+                                        <div class="count_content">
+                                            <p class="text-white">Status</p>
+                                            <h4><span class="text-white"
+                                                      id="success-{{ task.id }}">{% if task.success %}
+                                                Bajarildi{% else %}Bajarilmoqda{% endif %}</span>
+                                            </h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <script>
+                                    if ("{{ task.success }}" === "False") {
+                                        let interval{{ task.id }} = setInterval(() => {
+                                            fetch("{% url "adm:task" pk=task.id %}").then(res => {
+                                                return res.json()
+                                            }).then(res => {
+                                                document.querySelector("#total-{{ task.id }}").innerText = res.total
+                                                document.querySelector("#done-{{ task.id }}").innerText = res.done
+                                                document.querySelector("#error-{{ task.id }}").innerText = res.error
+
+                                                if (res.success === true) {
+                                                    document.querySelector("#success-{{ task.id }}").innerText = "Bajarildi"
+                                                    clearInterval(interval{{ task.id }})
+                                                }
+
+                                            }).catch(res => {
+                                                console.log(res)
+                                            })
+                                        }, 1000)
+                                    }
+                                </script>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+

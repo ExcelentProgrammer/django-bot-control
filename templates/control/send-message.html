@@ -1,0 +1,26 @@
+{% extends "layouts/main.html" %}
+{% load crispy_forms_filters %}
+
+{% block content %}
+    <div class="white_card card_height_100 mb_30">
+        <div class="white_card_header">
+            <div class="box_header m-0">
+                <div class="main-title">
+                    <h3 class="m-0">Foydalanuvchilarga xabar yuborish</h3>
+                </div>
+            </div>
+        </div>
+        <div class="white_card_body">
+            <div class="row d-flex justify-content-center">
+                <div class="col-12 col-sm-8 col-md-7 col-lg-6 col-xl-6">
+                    <form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
+                        {{ form|crispy }}
+                        <div class="footer d-flex justify-content-end">
+                            <button class="btn btn-success">Yuborish</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
