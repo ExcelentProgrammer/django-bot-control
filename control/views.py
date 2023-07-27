@@ -3,6 +3,7 @@ import mimetypes
 from threading import Thread
 
 from django.contrib import messages
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.exceptions import ValidationError
 from django.core.validators import URLValidator
 from django.shortcuts import render, redirect
@@ -27,7 +28,7 @@ def get_file_mime_type(file):
     return mime_type
 
 
-class HomePage(View):
+class HomePage(LoginRequiredMixin,View):
 
     def get(self, request):
         context = {
@@ -39,7 +40,7 @@ class HomePage(View):
         return render(request, "dashboard.html", context=context)
 
 
-class sendMessagePage(View):
+class sendMessagePage(LoginRequiredMixin,View):
 
     def get(self, request):
         form = sendMessageForm()

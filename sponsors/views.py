@@ -1,6 +1,5 @@
-import asyncio
-
 from django.contrib import messages
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import redirect
 from django.urls import reverse_lazy, reverse
 from django.views.generic import ListView, UpdateView, DeleteView, CreateView
@@ -9,25 +8,25 @@ from bot.management.commands.loader import bot
 from sponsors.models import Sponsors
 
 
-class HomePage(ListView):
+class HomePage(LoginRequiredMixin, ListView):
     template_name = "sponsors/list.html"
     model = Sponsors
 
 
-class UpdatePage(UpdateView):
+class UpdatePage(LoginRequiredMixin, UpdateView):
     template_name = "sponsors/edit.html"
     model = Sponsors
     fields = "__all__"
     success_url = reverse_lazy("sponsors:list")
 
 
-class DeletePage(DeleteView):
+class DeletePage(LoginRequiredMixin, DeleteView):
     template_name = "sponsors/delete.html"
     model = Sponsors
     success_url = reverse_lazy("sponsors:list")
 
 
-class CreatePage(CreateView):
+class CreatePage(LoginRequiredMixin, CreateView):
     template_name = "sponsors/create.html"
     model = Sponsors
     fields = ['link']
