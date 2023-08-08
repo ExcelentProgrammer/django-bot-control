@@ -38,8 +38,10 @@ class CreatePage(LoginRequiredMixin, CreateView):
         try:
             chat = bot.get_chat(link)
             name = chat.title
+            username = chat.username
             me = bot.get_me()
             form.instance.name = name
+            form.instance.username = username
 
             check = bot.get_chat_member(chat.id, me.id)
 

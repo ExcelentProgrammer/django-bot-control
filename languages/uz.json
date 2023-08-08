@@ -1,0 +1,12 @@
+{
+  "start": "\uD83D\uDC4B Salom, Bot orqali yuklab olishingiz mumkin:\n\n• Instagram - stories, post va IGTV;\n• YouTube - video/audio istalgan formatda;\n• TikTok - suv belgisiz video;\n• Likee - suv belgisiz video;\n• Pinterest - rasm, video va gif;\n• Facebook - video;\n• Twitter - rasm va video.\n\n\uD83D\uDE80 Media yuklashni boshlash uchun uning havolasini yuboring.\n\uD83D\uDE0E Bot guruhlarda ham ishlay oladi!",
+  "add_group": "Guruhga qo'shish",
+  "share": "Ulashish",
+  "send_video_error": "Videoni yuklashda xatolik yuzaga keldi ❌",
+  "subscribe": "❌ TAYORMASSIZ ❌ \n\nQuyidagi kanalarga obuna boling\uD83D\uDC47 \nva tekshirish uchun OBUNA BO'LDIM tugmasini bosing!",
+  "not_subscribe": "Siz hali kanallarga obuna bo'lmadingiz",
+  "confirm": "Tekshirish ✅",
+  "caption": "\uD83D\uDCE5 @{me} bilan yuklab olindi",
+  "big.file": "Video o'lchami 50 mb dan oshmasligi kerak",
+  "download.error": "\uD83D\uDE14 Afsuski yuklash davomida xatolik yuz berdi, qayta urinib ko'ring!"
+}
